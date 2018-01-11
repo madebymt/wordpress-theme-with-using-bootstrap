@@ -10,6 +10,21 @@ get_header(); ?>
 
 <?php if(is_front_page()) ?>
 
+<?php
+
+$slider1 = get_field('slider1');
+$slider2 = get_field('slider2');
+$slider3 = get_field('slider3');
+$size = 'full';
+
+
+if( $slider1) {
+
+	echo wp_get_attachment_image( $slider1, $size );
+}
+
+?>
+
 
 <div class="">
 <div class="w-slider-mask">
@@ -149,7 +164,9 @@ get_header(); ?>
     <h1 class="heading-3 popular-post">RECENT POST</h1>
     <div class="div-block-11 div-center"></div>
     <div>
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+          <?php echo do_shortcode("[post_grid id='43']"); ?>
+    </div>
+    <!-- <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <div class="w-row">
         <div class="column-3 w-col w-col-4">
           <div class="div-block-8">
@@ -160,14 +177,15 @@ get_header(); ?>
             <p class="paragraph-3"><?php the_content(); ?></p>
           </div>
         </div>
- 
+
       </div>
+      <div>
     </div>
   </div>
 
 <?php endwhile; else : ?>
 	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?>
+<?php endif; ?> -->
 
 
 <!-- /// button sign up /// -->

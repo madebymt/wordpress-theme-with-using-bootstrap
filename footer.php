@@ -14,17 +14,24 @@
 <div class="div-block-13">
   <div class="w-row">
     <div class="column-4 w-col w-col-4">
-      <div class="div-block-14"><img src="<?php bloginfo('stylesheet_directory')?>/assets/images/your-logo300.png" class="image-5 footer-img">
+
+      						 <?php if( has_custom_logo() ) {
+      							 echo the_custom_logo();
+      						 } else { ?>
+      							<h1><a href="<?php echo esc_url (home_url('/')); ?>"> <?php bloginfo('name'); ?> </a></h1>
+      						<?php } ?>
+
+      <!-- <div class="div-block-14"><img src="<?php bloginfo('stylesheet_directory')?>/assets/images/your-logo300.png" class="image-5 footer-img"> -->
         <p class="paragraph-8">&copy; <?php echo Date('Y') ?> - <?php bloginfo('name');?></p>
       </div>
     </div>
     <div class="w-col w-col-4">
       <h1 class="heading-9">PRODUCT</h1>
-      <p class="paragraph-9">T-SHIRT<br>DRESS<br>BAG<br>OTHER</p>
+      <a><p class="paragraph-9">T-SHIRT<br>DRESS<br>BAG<br>OTHER</p></a>
     </div>
     <div class="w-col w-col-4">
       <h1 class="heading-9">PRIVACY</h1>
-      <p class="paragraph-9">ABOUT<br>CONTACT<br>SUPPORT<br>HOUR: 10AM - 6PM</p>
+      <a><p class="paragraph-9">ABOUT<br>CONTACT<br>SUPPORT<br>HOUR: 10AM - 6PM</p></a>
     </div>
   </div>
 </div>

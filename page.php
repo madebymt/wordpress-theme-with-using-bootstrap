@@ -30,6 +30,17 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 
+
+			<!-- <?php if(have_posts()): ?>
+		   <?php while(have_posts()) : the_post();?> -->
+
+			 <?php endwhile;?>
+
+			<?php else : ?>
+				<?php __('No post found'); ?>
+
+			<?php endif; ?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

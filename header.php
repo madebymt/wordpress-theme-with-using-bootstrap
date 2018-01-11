@@ -66,27 +66,37 @@
 	<div class="div-block-18">
     <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
       <div class="container w-container">
-        <a href="index.html" class="w-nav-brand">
-          <div>
-						<img src="<?php bloginfo('stylesheet_directory')?>/assets/images/your-logo300.png" class="image-5">
+        <!-- <a href="index.html" class="w-nav-brand">
+          <div> -->
+
+
+ <!-- /// if have logo display logo, if not display blog name /// -->
+
+						 <?php if( has_custom_logo() ) {
+							 echo the_custom_logo();
+						 } else { ?>
+							<h1><a href="<?php echo esc_url (home_url('/')); ?>"> <?php bloginfo('name'); ?> </a></h1>
+						<?php } ?>
+
+
+
+						<!-- <img src="<?php bloginfo('stylesheet_directory')?>/assets/images/your-logo300.png" class="image-5"> -->
 					</div>
         </a>
          <nav role="navigation" class="nav-menu w-nav-menu">
 
 					 <?php
-wp_nav_menu( array(
-    'theme_location'    => 'primary',
-    'depth'             => 2,
-    'container'         => 'div',
-    'container_class'   => 'collapse navbar-collapse',
-    'container_id'      => 'bs-example-navbar-collapse-1',
-    'menu_class'        => 'nav navbar-nav',
-    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-    'walker'            => new WP_Bootstrap_Navwalker(),
-) );
-
-?>
-
+					 wp_nav_menu( array(
+					     'theme_location'    => 'primary',
+					     'depth'             => 2,
+					     'container'         => 'div',
+					     'container_class'   => 'collapse navbar-collapse',
+					     'container_id'      => 'bs-example-navbar-collapse-1',
+					     'menu_class'        => 'nav navbar-nav',
+					     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+					     'walker'            => new WP_Bootstrap_Navwalker(),
+					 ) );
+					 ?>
 
           <!-- <a href="index.html" class="nav-link w-nav-link"><strong class="bold-text">HOME</strong></a>
           <a href="about.html" class="nav-link-2 w-nav-link"><strong class="bold-text-2">ABOUT</strong></a>

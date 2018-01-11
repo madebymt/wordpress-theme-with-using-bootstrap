@@ -4,11 +4,32 @@ Template name: Home page
 
  */
 
+
+ //custume field
+
+$slider1_head = get_post_meta(11,'slider1_head',true);
+$slider1_content = get_post_meta(11,'slider1_content',true);
+
 get_header(); ?>
 
 <!-- slider -->
 
 <?php if(is_front_page()) ?>
+
+<?php
+
+$slider1 = get_field('slider1');
+$slider2 = get_field('slider2');
+$slider3 = get_field('slider3');
+$size = 'full';
+
+
+if( $slider1) {
+
+	echo wp_get_attachment_image( $slider1, $size );
+}
+
+?>
 
 
 <div class="">
@@ -16,9 +37,10 @@ get_header(); ?>
   <div class="slide w-slide">
     <div class="div-block slider-wrapper">
       <div class="div-block-2">
-        <h1 class="heading">start fresh of day</h1>
-        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo
-          cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+        <h1 class="heading"><?php echo $slider1_head;?></h1>
+        <p class="paragraph"><?php echo $slider1_content; ?></p>
+        <br>
+        <br>
       </div>
     </div>
   </div>
@@ -141,56 +163,39 @@ get_header(); ?>
 
 
 
+ <!-- //// post area //// -->
 
   <div class="div-block-20"> </div>
   <div class="div-block-12">
 
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
     <h1 class="heading-3 popular-post">RECENT POST</h1>
     <div class="div-block-11 div-center"></div>
     <div>
+          <?php echo do_shortcode("[post_grid id='43']"); ?>
+    </div>
+    <!-- <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <div class="w-row">
         <div class="column-3 w-col w-col-4">
           <div class="div-block-8">
-
             <a href="<?php the_permalink(); ?>">
-            <img src="<<?php the_post_thumbnail(); ?>" data-w-id="6c2180c1-d4fe-9540-e918-0425885df16f" class="image-3">
+            <img src="<?php the_post_thumbnail(); ?>" data-w-id="6c2180c1-d4fe-9540-e918-0425885df16f" class="image-3">
             <h1 class="heading-4"><?php the_title(); ?></h1>
           </a>
             <p class="paragraph-3"><?php the_content(); ?></p>
           </div>
         </div>
 
-
-
-
-
-        <!-- <div class="column-3 w-col w-col-4">
-          <div class="div-block-8">
-						<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/pexels-photo-386151.jpeg" data-w-id="6c2180c1-d4fe-9540-e918-0425885df16f" class="image-3">
-            <h1 class="heading-4">Blog post 2</h1>
-            <p class="paragraph-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo
-              cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-          </div>
-        </div>
-
-        <div class="w-col w-col-4">
-          <div>
-				    <img src="<?php bloginfo('stylesheet_directory');?>/assets/images/pexels-photo-386151.jpeg" data-w-id="f56f7b61-5a1c-8912-469a-280339605312" class="image-3">
-            <h1 class="heading-4">Blog post 3</h1>
-            <p class="paragraph-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo
-              cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-          </div>
-        </div> -->
-
       </div>
+      <div>
     </div>
   </div>
 
 <?php endwhile; else : ?>
 	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?>
+<?php endif; ?> -->
+
+
+<!-- /// button sign up /// -->
 
   <div class="div-block-15">
     <!-- <div data-w-id="13d89fc0-978c-a5d7-5dd8-14091d73373b" class="div-block-40 modal"> -->
