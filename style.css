@@ -639,8 +639,8 @@ ul, li {
 }
 
 .slide {
-  background-image: url('/wp-content/themes/new-theme-template/assets/images/pexels-photo-566566.jpeg'), url('../images/example-bg.png');
-  background-position: 50% 50%, 0px 0px;
+  background-image: url('/wp-content/themes/new-theme-template/assets/images/pexels-photo-566566.jpeg'), url('/wp-content/themes/new-theme-template/assets/images/pexels-photo-566566.jpeg'');
+ background-position: 50% 50%, 0px 0px;
   background-size: cover, auto;
 }
 
@@ -1045,6 +1045,8 @@ ul, li {
   justify-content: space-around;
   text-align: center;
 }
+
+/* NOTE:  */
 
 .form {
   width: 50%;

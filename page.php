@@ -33,13 +33,13 @@ get_header(); ?>
 
 			<!-- <?php if(have_posts()): ?>
 		   <?php while(have_posts()) : the_post();?> -->
-
+<!--
 			 <?php endwhile;?>
 
 			<?php else : ?>
 				<?php __('No post found'); ?>
 
-			<?php endif; ?>
+			<?php endif; ?> -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

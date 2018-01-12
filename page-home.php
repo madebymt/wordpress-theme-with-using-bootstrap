@@ -1,16 +1,10 @@
 <?php
 /*
 Template name: Home page
-
  */
-
-
  //custume field
 
-$slider1_head = get_post_meta(11,'slider1_head',true);
-$slider1_content = get_post_meta(11,'slider1_content',true);
-
-get_header(); ?>
+get_header();?>
 
 <!-- slider -->
 
@@ -18,18 +12,33 @@ get_header(); ?>
 
 <?php
 
+
+$slider1_head = get_post_meta(11,'slider1_head',true);
+$slider1_content = get_post_meta(11,'slider1_content',true);
+
 $slider1 = get_field('slider1');
 $slider2 = get_field('slider2');
 $slider3 = get_field('slider3');
 $size = 'full';
+$sign_up_title = get_field('sign_up_title');
+$sign_up_intro = get_field('sign_up_into');
+$sign_up_form = get_field('sign_up_form');
 
+$author_img = get_field('author_img');
+$author_title = get_field('about_tilte');
+$about_author = get_field('about_author');
+
+
+$product_feature_img = get_field('product_feature_img');
+$product_title = get_field('product_title');
+$product_price = get_field('product_price');
 
 if( $slider1) {
-
 	echo wp_get_attachment_image( $slider1, $size );
 }
 
 ?>
+
 
 
 <div class="">
@@ -83,7 +92,8 @@ if( $slider1) {
 
   <div class="div-block-17">
     <div class="div-block-16 home-signup">
-      <h1 class="heading-11">JOIN ME WITH ALL THE GOODIES</h1>
+      <h1 class="heading-11"><?php echo $sign_up_title;?></h1>
+      <?php get_field('sign_up_form');?>
       <!-- <div>
         <div class="w-form">
           <form id="email-form" name="email-form" data-name="Email Form" class="form-2"><label for="name" class="field-label">Name:</label><input type="text" class="text-field w-input" maxlength="256" name="name" data-name="Name" id="name" required=""><label for="email" class="field-label-2">Email:</label><input type="text" class="text-field-2 w-input"
@@ -103,14 +113,13 @@ if( $slider1) {
     <div class="row w-row">
       <div class="column w-col w-col-6">
         <div class="div-block-3">
-					<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/pic1.png" srcset="<?php bloginfo('stylesheet_directory');?>/assets/images/pic1-p-500.png 500w, images/pic1.png 635w" sizes="(max-width: 479px) 85vw, (max-width: 767px) 91vw, (max-width: 991px) 48vw, 25vw" class="image">
+					<img src="<?php the_field('author_img'); ?>" sizes="(max-width: 479px) 85vw, (max-width: 767px) 91vw, (max-width: 991px) 48vw, 25vw" class="image">
 				</div>
       </div>
       <div class="column-6 w-col w-col-6">
         <div class="div-block-5">
-          <h1 class="heading-3">My name is Ally</h1>
-          <p class="paragraph-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus
-            id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere. </p>
+          <h1 class="heading-3"><?php the_field('author_title');?></h1>
+          <p class="paragraph-2"><?php the_field('about_author');?></p>
           <div class="div-block-11"></div>
         </div>
       </div>
@@ -118,46 +127,24 @@ if( $slider1) {
   </div>
   <div class="div-block-10">
     <h1 class="heading-7">TOP SELLER</h1>
-    <p class="paragraph-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
-      rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+    <!-- <p class="paragraph-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
+      rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p> -->
     <div class="w-row">
+
+      <?php $loop = new WP_Query(array('post_type' =>'product_feature','orderby' =>'post_id','order' => 'ASC')); ?>
+
+      <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
+
       <div class="column-5 w-col w-col-4">
-        <div><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624.jpg" srcset="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624-p-800.jpeg 800w, images/free-tshirt-mockup-1024x624.jpg 1024w" sizes="(max-width: 479px) 92vw, (max-width: 767px) 87vw, (max-width: 3657px) 28vw, 1024px"
-            data-w-id="167eb020-cc10-2fa4-07be-3f9945f2da08">
-          <h1 class="heading-8">T-SHIRT</h1>
-          <p class="paragraph-7">$24.99</p>
+        <div>
+          <img src="<?php the_field('product_feature_img');?>" alt="">
+          <h1 class="heading-8"><?php the_title(); ?></h1>
+          <p class="paragraph-7"><?php the_field('product_price')?></p>
+
         </div>
-      </div>
-      <div class="w-col w-col-4"><img src="<<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624.jpg" srcset="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624-p-800.jpeg 800w, images/free-tshirt-mockup-1024x624.jpg 1024w" sizes="(max-width: 479px) 87vw, (max-width: 767px) 84vw, (max-width: 3657px) 28vw, 1024px"
-          data-w-id="81c8a637-f29b-606d-53c0-19be2684cf86">
-        <h1 class="heading-8">T-SHIRT</h1>
-        <p class="paragraph-7">$24.99</p>
-      </div>
-      <div class="w-col w-col-4"><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624.jpg" srcset="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624-p-800.jpeg 800w, images/free-tshirt-mockup-1024x624.jpg 1024w" sizes="(max-width: 479px) 87vw, (max-width: 767px) 84vw, (max-width: 3657px) 28vw, 1024px"
-          data-w-id="5edf8143-1aba-9357-3277-b9d0e49f8725">
-        <h1 class="heading-8">T-SHIRT</h1>
-        <p class="paragraph-7">$24.99</p>
-      </div>
     </div>
-    <div class="w-row">
-      <div class="w-col w-col-4">
-        <div><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624.jpg" srcset="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624-p-800.jpeg 800w, images/free-tshirt-mockup-1024x624.jpg 1024w" sizes="(max-width: 479px) 87vw, (max-width: 767px) 84vw, (max-width: 3657px) 28vw, 1024px"
-            data-w-id="8cf9d881-5f3b-6a4a-dadb-886f08056272">
-          <h1 class="heading-8">T-SHIRT</h1>
-          <p class="paragraph-7">$24.99</p>
-        </div>
-      </div>
-      <div class="w-col w-col-4"><img src="<<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624.jpg" srcset="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624-p-800.jpeg 800w, images/free-tshirt-mockup-1024x624.jpg 1024w" sizes="(max-width: 479px) 87vw, (max-width: 767px) 84vw, (max-width: 3657px) 28vw, 1024px"
-          data-w-id="0148b804-e89f-cc36-2afa-b477b5aff841">
-        <h1 class="heading-8">T-SHIRT</h1>
-        <p class="paragraph-7">$24.99</p>
-      </div>
-      <div class="w-col w-col-4"><img src="<<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624.jpg" srcset="<?php bloginfo('stylesheet_directory');?>/assets/images/free-tshirt-mockup-1024x624-p-800.jpeg 800w, images/free-tshirt-mockup-1024x624.jpg 1024w" sizes="(max-width: 479px) 87vw, (max-width: 767px) 84vw, (max-width: 3657px) 28vw, 1024px"
-          data-w-id="fee24b52-d3c2-b0ec-19ca-61c9dee564b6">
-        <h1 class="heading-8">T-SHIRT</h1>
-        <p class="paragraph-7">$24.99</p>
-      </div>
-    </div>
+
+      <?php endwhile; ?>
   </div>
 
 
@@ -171,11 +158,13 @@ if( $slider1) {
     <h1 class="heading-3 popular-post">RECENT POST</h1>
     <div class="div-block-11 div-center"></div>
     <div>
-          <?php echo do_shortcode("[post_grid id='43']"); ?>
+
     </div>
-    <!-- <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
       <div class="w-row">
-        <div class="column-3 w-col w-col-4">
+        <?php echo do_shortcode("[post_grid id='43']"); ?>
+
+        <!-- <div class="column-3 w-col w-col-4">
           <div class="div-block-8">
             <a href="<?php the_permalink(); ?>">
             <img src="<?php the_post_thumbnail(); ?>" data-w-id="6c2180c1-d4fe-9540-e918-0425885df16f" class="image-3">
@@ -183,16 +172,14 @@ if( $slider1) {
           </a>
             <p class="paragraph-3"><?php the_content(); ?></p>
           </div>
-        </div>
+        </div> -->
 
       </div>
-      <div>
-    </div>
+
   </div>
 
-<?php endwhile; else : ?>
-	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?> -->
+
+
 
 
 <!-- /// button sign up /// -->
@@ -215,8 +202,8 @@ if( $slider1) {
             <div>Oops! Something went wrong while submitting the form.</div>
           </div>
         </div>
-      </div> -->
-    <!-- </div> -->
+      </div>
+  </div>  -->
     <h1 class="heading-10">Journey start here...</h1>
     <a href="#" data-w-id="447913fd-49d5-938c-f1c7-16b5bc980535" class="button w-button">JOIN ME</a>
   </div>

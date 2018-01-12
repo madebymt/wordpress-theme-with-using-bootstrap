@@ -26,6 +26,7 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url')?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<!-- reference stylesheet and js -->
+
   <link href="<?php bloginfo('stylesheet_directory');?>/assets/css/normalize.css" rel="stylesheet" type="text/css">
   <link href="<?php bloginfo('stylesheet_directory');?>/assets/css/components.css" rel="stylesheet" type="text/css">
 	<link href="<?php bloginfo('stylesheet_directory');?>/style.css" rel="stylesheet" type="text/css">
@@ -77,9 +78,6 @@
 						 } else { ?>
 							<h1><a href="<?php echo esc_url (home_url('/')); ?>"> <?php bloginfo('name'); ?> </a></h1>
 						<?php } ?>
-
-
-
 						<!-- <img src="<?php bloginfo('stylesheet_directory')?>/assets/images/your-logo300.png" class="image-5"> -->
 					</div>
         </a>
