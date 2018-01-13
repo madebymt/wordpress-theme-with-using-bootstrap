@@ -8,7 +8,6 @@
  *
  * @package new_theme
  */
-
 ?>
 
 <!Doctype html>
@@ -18,19 +17,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="<?php bloginfo('description');?>">
 	<title>
-
 		<?php bloginfo('name');?>
 		<?php is_front_page()? bloginfo('description') : wp_title(); ?>
-</title>
+  </title>
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url')?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<!-- reference stylesheet and js -->
-
-  <link href="<?php bloginfo('stylesheet_directory');?>/assets/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo esc_url( get_stylesheet_directory_uri());?>/assets/css/normalize.css" rel="stylesheet" type="text/css">
   <link href="<?php bloginfo('stylesheet_directory');?>/assets/css/components.css" rel="stylesheet" type="text/css">
-	<link href="<?php bloginfo('stylesheet_directory');?>/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="<?php echo esc_url( get_stylesheet_directory_uri());?>/style.css" rel="stylesheet" type="text/css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">
 	WebFont.load({
@@ -51,8 +49,6 @@
 </script>
 <link href="<?php bloginfo('stylesheet_directory');?>/assets/images/favicion32x32.jpg" rel="shortcut icon" type="image/x-icon">
 <link href="<?php bloginfo('stylesheet_directory');?>/assets/images/Untitled-1.jpg" rel="apple-touch-icon">
-
-
 <?php wp_head(); ?>
 
 </head>
@@ -61,24 +57,14 @@
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'new-theme' ); ?></a>
-
-
-
 	<div class="div-block-18">
     <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
       <div class="container w-container">
-        <!-- <a href="index.html" class="w-nav-brand">
-          <div> -->
-
-
- <!-- /// if have logo display logo, if not display blog name /// -->
-
 						 <?php if( has_custom_logo() ) {
 							 echo the_custom_logo();
 						 } else { ?>
 							<h1><a href="<?php echo esc_url (home_url('/')); ?>"> <?php bloginfo('name'); ?> </a></h1>
 						<?php } ?>
-						<!-- <img src="<?php bloginfo('stylesheet_directory')?>/assets/images/your-logo300.png" class="image-5"> -->
 					</div>
         </a>
          <nav role="navigation" class="nav-menu w-nav-menu">
@@ -95,14 +81,6 @@
 					     'walker'            => new WP_Bootstrap_Navwalker(),
 					 ) );
 					 ?>
-
-          <!-- <a href="index.html" class="nav-link w-nav-link"><strong class="bold-text">HOME</strong></a>
-          <a href="about.html" class="nav-link-2 w-nav-link"><strong class="bold-text-2">ABOUT</strong></a>
-          <a href="blog.html" class="nav-link-3 w-nav-link"><strong class="bold-text-3">BLOG</strong></a>
-          <a href="shop.html" class="nav-link-3 w-nav-link"><strong class="bold-text-4">SHOP</strong></a>
-          <a href="resource.html" class="nav-link-3 w-nav-link"><strong class="bold-text-5">RESOURCE</strong></a>
-          <a href="contact.html" class="nav-link-4 w-nav-link"><strong class="bold-text-6">CONTACT</strong></a> -->
-
          </nav>
          <div class="menu-button w-nav-button">
           <div class="w-icon-nav-menu"></div>

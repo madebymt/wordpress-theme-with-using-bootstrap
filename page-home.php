@@ -3,16 +3,10 @@
 Template name: Home page
  */
  //custume field
-
 get_header();?>
-
-<!-- slider -->
-
 <?php if(is_front_page()) ?>
 
 <?php
-
-
 $slider1_head = get_post_meta(11,'slider1_head',true);
 $slider1_content = get_post_meta(11,'slider1_content',true);
 
@@ -28,20 +22,14 @@ $author_img = get_field('author_img');
 $author_title = get_field('about_tilte');
 $about_author = get_field('about_author');
 
-
 $product_feature_img = get_field('product_feature_img');
 $product_title = get_field('product_title');
 $product_price = get_field('product_price');
-
-if( $slider1) {
-	echo wp_get_attachment_image( $slider1, $size );
-}
-
 ?>
 
 
 
-<div class="">
+<!-- <div class="">
 <div class="w-slider-mask">
   <div class="slide w-slide">
     <div class="div-block slider-wrapper">
@@ -54,8 +42,8 @@ if( $slider1) {
     </div>
   </div>
 
-      <!--   slider 2-->
-      <div class="slide-2 w-slide">
+      <!- slider 2-->
+      <!-- <div class="slide-2 w-slide">
         <div class="div-block slider-wrapper">
           <div class="div-block-2">
             <h1 class="heading">Deslicious</h1>
@@ -63,10 +51,10 @@ if( $slider1) {
               cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!--  slider 3 -->
-      <div class="slide-3 w-slide">
+      <!-- <div class="slide-3 w-slide">
         <div class="div-block slider-wrapper">
           <div class="div-block-2">
             <h1 class="heading">Desert time</h1>
@@ -76,10 +64,9 @@ if( $slider1) {
         </div>
       </div>
   </div>
-  </div>
+  </div> -->
 
   <!---  end of slider    -->
-
     <div class="left-arrow w-slider-arrow-left">
       <div class="icon w-icon-slider-left"></div>
     </div>
@@ -93,18 +80,9 @@ if( $slider1) {
   <div class="div-block-17">
     <div class="div-block-16 home-signup">
       <h1 class="heading-11"><?php echo $sign_up_title;?></h1>
-      <?php get_field('sign_up_form');?>
+      <!-- <?php get_field('sign_up_form');?> -->
       <!-- <div>
         <div class="w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" class="form-2"><label for="name" class="field-label">Name:</label><input type="text" class="text-field w-input" maxlength="256" name="name" data-name="Name" id="name" required=""><label for="email" class="field-label-2">Email:</label><input type="text" class="text-field-2 w-input"
-              maxlength="256" name="email" data-name="Email" id="email" required=""><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button"></form>
-          <div class="w-form-done">
-            <div>Thank you! Your submission has been received!</div>
-          </div>
-          <div class="w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-          </div>
-        </div>
       </div> -->
     </div>
   </div>
@@ -125,6 +103,8 @@ if( $slider1) {
       </div>
     </div>
   </div>
+
+
   <div class="div-block-10">
     <h1 class="heading-7">TOP SELLER</h1>
     <!-- <p class="paragraph-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
@@ -140,10 +120,8 @@ if( $slider1) {
           <img src="<?php the_field('product_feature_img');?>" alt="">
           <h1 class="heading-8"><?php the_title(); ?></h1>
           <p class="paragraph-7"><?php the_field('product_price')?></p>
-
         </div>
     </div>
-
       <?php endwhile; ?>
   </div>
 
@@ -164,15 +142,6 @@ if( $slider1) {
       <div class="w-row">
         <?php echo do_shortcode("[post_grid id='43']"); ?>
 
-        <!-- <div class="column-3 w-col w-col-4">
-          <div class="div-block-8">
-            <a href="<?php the_permalink(); ?>">
-            <img src="<?php the_post_thumbnail(); ?>" data-w-id="6c2180c1-d4fe-9540-e918-0425885df16f" class="image-3">
-            <h1 class="heading-4"><?php the_title(); ?></h1>
-          </a>
-            <p class="paragraph-3"><?php the_content(); ?></p>
-          </div>
-        </div> -->
 
       </div>
 
@@ -206,7 +175,7 @@ if( $slider1) {
   </div>  -->
     <h1 class="heading-10">Journey start here...</h1>
     <a href="#" data-w-id="447913fd-49d5-938c-f1c7-16b5bc980535" class="button w-button">JOIN ME</a>
-  </div>
+  </div> -->
 
 
 <?php get_footer(); ?>
