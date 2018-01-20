@@ -29,7 +29,7 @@ $product_price = get_field('product_price');
 
 
 
-<!-- <div class="">
+<div class="">
 <div class="w-slider-mask">
   <div class="slide w-slide">
     <div class="div-block slider-wrapper">
@@ -42,7 +42,7 @@ $product_price = get_field('product_price');
     </div>
   </div>
 
-      <!- slider 2-->
+      <!-- < slider 2> -->
       <!-- <div class="slide-2 w-slide">
         <div class="div-block slider-wrapper">
           <div class="div-block-2">
@@ -64,9 +64,9 @@ $product_price = get_field('product_price');
         </div>
       </div>
   </div>
-  </div> -->
+  </div>
 
-  <!---  end of slider    -->
+  <!- end of slider    -->
     <div class="left-arrow w-slider-arrow-left">
       <div class="icon w-icon-slider-left"></div>
     </div>
@@ -175,7 +175,7 @@ $product_price = get_field('product_price');
   </div>  -->
     <h1 class="heading-10">Journey start here...</h1>
     <a href="#" data-w-id="447913fd-49d5-938c-f1c7-16b5bc980535" class="button w-button">JOIN ME</a>
-  </div> -->
+  </div>
 
 
 <?php get_footer(); ?>

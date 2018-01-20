@@ -571,10 +571,39 @@ ul, li {
 
 /*------------------ end of menu ul,ol item style ---------------------*/
 
+/*menu*/
+
+ul, li {
+  font-family: Montserrat, sans-serif;
+  color: #eb6c54;
+}
+
+li .page_item a {
+  text-decoration: none;
+  color: #eb6c54;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #eb6c54;
+}
+
+ul, li {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+/*------------------menu ul,ol item style ---------------------*/
+
 .slider {
-  width: 100%;
   height: 100vh;
-  /*height: 100vh;*/
 }
 
 .nav-link {
@@ -639,8 +668,8 @@ ul, li {
 }
 
 .slide {
-  background-image: url('/wp-content/themes/new-theme-template/assets/images/pexels-photo-566566.jpeg'), url('/wp-content/themes/new-theme-template/assets/images/pexels-photo-566566.jpeg'');
- background-position: 50% 50%, 0px 0px;
+  background-image: url('/wp-content/themes/new-theme-template/assets/images/pexels-photo-566566.jpeg'), url('/wp-content/themes/new-theme-template/assets/images/example-bg.png');
+  background-position: 50% 50%, 0px 0px;
   background-size: cover, auto;
 }
 
@@ -823,9 +852,7 @@ ul, li {
 
 .image-3 {
   display: block;
-  /*width: 80%;*/
-  width: 50%;
-  height: auto;
+  width: 80%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1009,7 +1036,7 @@ ul, li {
   -ms-flex-align: center;
   align-items: center;
   background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .24), hsla(0, 0%, 100%, .2)), url('/wp-content/themes/new-theme-template/assets/images/pexels-photo-378153.jpeg');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, .24), hsla(0, 0%, 100%, .2)), url('/wp-content/themes/new-theme-template/assets/images/pexels-photo-378153.jpeg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .24), hsla(0, 0%, 100%, .2)), url('/wp-content/themes/theme-test2/assets/images/pexels-photo-378153.jpeg');
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-attachment: scroll, fixed;
@@ -1039,14 +1066,9 @@ ul, li {
   flex: 1;
 }
 
-. {
-  /*float: right;*/
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
+.nav-menu {
+  float: right;
 }
-
-/* NOTE:  */
 
 .form {
   width: 50%;
@@ -2300,35 +2322,35 @@ ul, li {
 
 @font-face {
   font-family: 'Littlelordfontleroynf';
-  src: url('../fonts/LittleLordFontleroyNF.ttf') format('truetype');
+  src: url('/wp-content/themes/new-theme-template/assets/fonts/LittleLordFontleroyNF.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Crystal heart';
-  src: url('../fonts/Crystal-Heart.ttf') format('truetype'), url('../fonts/Crystal-Heart.otf') format('opentype');
+  src: url('/wp-content/themes/new-theme-template/assets/fonts/Crystal-Heart.ttf') format('truetype'), url('/wp-content/themes/new-theme-template/assets/fonts/Crystal-Heart.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Sun valley demo';
-  src: url('../fonts/Sun-Valley---Demo.ttf') format('truetype');
+  src: url('/wp-content/themes/new-theme-template/assets/fonts/Sun-Valley---Demo.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Vacations in phuket';
-  src: url('../fonts/Vacations-in-Phuket.ttf') format('truetype');
+  src: url('/wp-content/themes/new-theme-template/assets/fonts/Vacations-in-Phuket.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Fontawesome webfont';
-  src: url('../fonts/fontawesome-webfont.ttf') format('truetype');
+  src: url('/wp-content/themes/new-theme-template/assets/fonts/fontawesome-webfont.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
