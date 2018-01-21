@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package new_theme
+ * @package theme_test2
  */
 
 ?>
@@ -14,14 +14,14 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php new_theme_post_thumbnail(); ?>
+	<?php theme_test2_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'new-theme' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theme-test2' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -34,7 +34,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'new-theme' ),
+							__( 'Edit <span class="screen-reader-text">%s</span>', 'theme-test2' ),
 							array(
 								'span' => array(
 									'class' => array(),
