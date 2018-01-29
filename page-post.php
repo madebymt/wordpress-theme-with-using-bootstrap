@@ -12,7 +12,14 @@ get_header(); ?>
     <h1 class="heading-12">Blog</h1>
   </div>
 
-
+  <div class="div-block-21">
+    <h1 class="heading-12">Blog</h1>
+  </div>
+  div class="div-block-21">
+    <h1 class="heading-12">Blog</h1>
+  </div>div class="div-block-21">
+    <h1 class="heading-12">Blog</h1>
+  </div>
   <!--- blog post  -->
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

@@ -12,7 +12,6 @@ $product_price = get_field('product_price');
     <div class="w-row">
 
       <?php $loop = new WP_Query(array('post_type' =>'product_feature','orderby' =>'post_id','order' => 'ASC')); ?>
-
       <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
 
       <div class="column-5 w-col w-col-4">
